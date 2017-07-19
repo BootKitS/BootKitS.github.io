@@ -78,7 +78,7 @@
       
         <p>####</p>
 <h3 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h3><hr>
-<p>首先打开WinWord.exe,用windbg附加调试，打开crash.rtf文件。<br><img src="/pic/ret.png" alt="ret icon"></p>
+<p>首先打开WinWord.exe,用windbg附加调试，打开crash.rtf文件。<br><img src="pic/ret.png" alt="ret icon"></p>
 <p>我们发现在rep move指令处程序crash掉了，通过查看esi以及edi，我们发现，程序已经复制了一部分数据到edi，至于挂掉的原因，大家可以在windbg中使用 !address edi 查看，发现此时的edi（130000）只能read。  </p>
 <p>我们在当前eip 30e97c06 下一个断点。<br><img src="pic/kb.png" alt="ret icon"></p>
 <p>看下图，我们知道rep mov 所在的函数是被30f749d2调用的。<br><img src="pic/ub.png" alt="ret icon"></p>
